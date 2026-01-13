@@ -1249,6 +1249,8 @@ AttentionModuleOutput ROCmDevice::decoderSelfAttention(const AttentionModulePara
             if (init_params_.use_asm_pa) {
                 runAiterAsmPA(params, this, *q_output);
             } else {
+                std::cout<<"this should not happen !"<<std::endl;
+                abort();
                 runAiterPA(params, this, *q_output);
             }
             check_cuda_error();
